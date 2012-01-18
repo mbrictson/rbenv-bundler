@@ -34,9 +34,9 @@ if [[ -n "$PLUGIN_DISABLED" ]] || { ! bundle_path=$(get_bundle_path "$RBENV_DIR"
     return
 fi
 
-bundled_executable=$(find_bundled_executable $bundle_path $RBENV_COMMAND)
+bundled_executable=$(find_bundled_executable "$bundle_path" "$RBENV_COMMAND")
 
-if [[ ! $bundled_executable ]]; then
+if [[ -z "$bundled_executable" ]]; then
     return
 fi
 
