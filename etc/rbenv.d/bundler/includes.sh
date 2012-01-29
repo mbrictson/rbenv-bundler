@@ -76,6 +76,10 @@ function find_bundled_executable {
   elif [[ -x "${bundle_path}/bin/${binary_name}" ]]; then
 
       echo "${bundle_path}/bin/${binary_name}"
+
+  else
+
+      return 1
   fi
 }
 
